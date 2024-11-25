@@ -24,36 +24,39 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>Deployment and Configuration Steps</h2>
 
-- Create A Recource group and Install Windows Server 2022 VM
-- RDP into the windows server and Install Active Directory Domain Services
+- Create A Resource group and Install Windows Server 2022 VM
+- RDP into the Windows server and Install Active Directory Domain Services
 - Make the server the Domain Controler
 - Create Organisation units OUs) and some users
-- Create a Win10 client VM and add the WIN 10 client to the domain
-- Create many users using powershell scripting 
+- Create a Win10 client VM and add the WIN10 client to the domain
+- Create many users using PowerShell scripting 
 - RDP into the Win10 VM using user credentials created 
 
-<h2>Deployment and Configuration Steps</h2>
+<h2>Create A Resource group and Install Windows Server 2022 VM</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+First We have to create a resource group, the resource group acts as a home for our virtual machines. On the Azure portal dashboard click on the resource group.
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+<img src="https://i.imgur.com/DExp5Lz.png"/>
 </p>
+
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
+<p>
+<img src="https://i.imgur.com/DExp5Lz.png"/>
+</p>
+
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
+<p>
+<img src="https://i.imgur.com/DExp5Lz.png"/>
+</p>
+
 <br />
