@@ -44,19 +44,38 @@ First We have to create a resource group, the resource group acts as a home for 
 <br />
 
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+We are going to name the resource group AzureAD. I choose Southeast Asia region, you can choose whatever region you like and click on "review and create" and "create" to create your resource group. 
 </p>
 <p>
-<img src="https://i.imgur.com/DExp5Lz.png"/>
+<img src="https://i.imgur.com/oDTjU61.png"/>
 </p>
 
 <br />
 
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Now we have to create our Windows server virtual machine. on the search bar, type "virtual machines" and click on virtual machines
 </p>
 <p>
-<img src="https://i.imgur.com/DExp5Lz.png"/>
+<img src="https://i.imgur.com/NOJFXTw.png"/>
 </p>
 
 <br />
+
+<p>
+Choose the same resource group we created, and give the virtual machine a name. I will be naming mine Azure-AD-Lab. choose a region, choose the Windows server 2022 datacenter Azure edition 
+</p>
+<p>
+<img src="https://i.imgur.com/ipskruz.png"/>
+</p>
+
+<br />
+
+<p>
+Choose a size with at least 2 VCPUs as this will increase the performance of the VM. Give the account a username and a password and click on next 
+</p>
+<p>
+<img src="https://i.imgur.com/6klxmjN.png"/>
+</p>
+
+<br />
+
