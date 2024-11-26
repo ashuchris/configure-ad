@@ -28,7 +28,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - RDP into the Windows server and Install Active Directory Domain Services
 - Make the server the Domain Controler
 - Create Organisation units OUs) and some users
-- Create a Win10 client VM and add the WIN10 client to the domain
+- Create a Win10 client VM add the WIN10 client to the domain
 - Create many users using PowerShell scripting 
 - RDP into the Win10 VM using user credentials created 
 
@@ -332,10 +332,180 @@ Click on apply then OK
 
 <h2>It is now time to install our Windows 10 client VM</h2>
 
-<p>While creating the VM we must select the same Resource group we created from the start and also the region must be the same as that of the server. We choose the WIN10 pro image.
+<p>
+  While creating the VM we must select the same Resource group we created from the start and also the region must be the same as that of the server. We choose the WIN10 pro image.
 </p>
 <p>
 <img src="https://i.imgur.com/MtP92iS.png"/>
 </p>
 
 <br />
+
+<p>
+  Fill in your credentials, check the confirmation box, and go to Next.
+</p>
+<p>
+<img src="https://i.imgur.com/MkjkMHZ.png"/>
+</p>
+
+<br />
+
+<p>
+The virtual network must be the same as the virtual network of the server. The subnet should be the same too. If not the two computers won't be able to communicate. You can now create the VM.</p>
+<p>
+<img src="https://i.imgur.com/3RR0KLq.png"/>
+</p>
+
+<br />
+
+<h2>Joining the windows VM to the domain controler</h2>
+
+<p>Before we join the windows VM to the domain controller it is very important that we do two things for it to be a success <p>
+<p>We must make the private Ip address of the server static and we must configure the DNS of the windows VM by making the DNS entry the private address of the domain controller<p>
+<p>By doing so the DNS server of the windows VM becomes the DC<p>  
+<p>Inside of VM machines in the Azure portal click on the server VM and click on network settings <p>
+  <img src="https://i.imgur.com/JNM6PC4.png"/>
+</p>
+
+<br />
+
+<p>
+Click on the network interface
+<p>
+<img src=" https://i.imgur.com/SWwCPHu.png"/>
+</p>
+
+<br />
+
+<p>
+Click on IP Config
+<p>
+<img src="https://i.imgur.com/HWvTjEm.png"/>
+</p>
+
+<br />
+
+<p>
+change the selection from DHCP to static and save. This way the private ip address will not keep changing each time the server reboots.Now reboot the server.
+<p>
+<img src="https://i.imgur.com/8YczOgi.png"/>
+</p>
+
+<br />
+
+<p>
+Now we go back to the Windows VM and change the DNS server config. Click on the Windows VM in the Azure portal and go to network settings.
+<p>
+<img src="https://i.imgur.com/MeqL72N.png"/>
+</p>
+
+<br />
+
+<p>
+enter the network interface and this time click on DNS servers
+<p>
+<img src="https://i.imgur.com/4Bh7uhN.png"/>
+</p>
+
+<br />
+
+<p>
+Click on custom and type in the private IP address of the domain controller and click on save and reboot the WIN10 VM.
+<p>
+<img src="https://i.imgur.com/w1iNxgA.png."/>
+</p>
+<br />
+
+<p>
+RDP into the Windows VM and right-click on the Windows icon and click on system.
+<p>
+<img src="https://i.imgur.com/kSzaRdk.png"/>
+</p>
+<br />
+
+<p>
+Scroll down and click on rename this PC (advanced).
+<p>
+<img src="https://i.imgur.com/h7NBFpv.png"/>
+</p>
+<br />
+
+<p>
+Click on change.
+<p>
+<img src="https://i.imgur.com/Tn1wabo.png" />
+</p>
+<br />
+
+<p>
+Click on domain, input the domain name, and click ok. 
+<p>
+<p><img src="https://i.imgur.com/hwXW8M1.png" />
+</p>
+<br />
+
+<p>You have to input an administrative domain account credential. Let's use the user we created in the _ADMIN OU. If done right we receive a welcome to the domain dialogue box and the VM restarts <p>
+  
+<p><img src="https://i.imgur.com/h48hMmL.png"
+</p>
+<br />
+
+<h2>Create many users using PowerShell scripting</h2>
+
+<p>Let's create many users for our _EMPLOYEES OU. This time we want to use Powershell rather than creating it manually</p>
+  <p>In our Windows server click on search and type in PowerShell ISE and run it</p>
+<p><img src="https://i.imgur.com/5AYhUNm.png" />
+</p>
+<br />
+
+
+<p>This is the script we have to run. We make sure the path specifically relates to our "_EMPLOYEES" OU and we run it. This will create random users inside of our "_EMPLOYEES" OU. </p>
+    <p><img src="https://i.imgur.com/rp7Mj0A.png" /></p>
+    
+<br />
+
+<p>
+Now we have many users in our _EMPLOYEES OU and we can now use any of them to login into our WIN10 VM as members of the domain.
+<p>
+<img src="https://i.imgur.com/s948jKa.png"/>
+</p>
+
+<br />
+
+<p>But before we log in using our newly created domain users we have to give them permission to RDP into our WIN10 VM.</p>
+<p>In the Windows 10 VM go to systems as we did before and click on Remote Desktop </p>
+<p><img src="https://i.imgur.com/6cgghkj.png"/></p>
+
+<br />
+
+<p>
+  Click on Select Users under user accounts
+</p>
+<p>
+<img src="https://i.imgur.com/09c9xDh.png"/>
+</p>
+
+<br />
+
+<p>
+  Just as we did give permissions to the domain admins this time we want to click Add, search for the domain users group, and click OK. Now the domain users we created and RDP into the WIN 10 VM.
+</p>
+<p>
+<img src="https://i.imgur.com/xNGx66C.png"/>
+</p>
+
+<br />
+
+<p>
+  Let's RDP into the Windows VM using one of the user domain accounts we created in the _EMPLOYEE OU.
+</p>
+<p>
+<img src="https://i.imgur.com/vmYS4Zm.png"/>
+</p>
+
+<br />
+
+<h2>Congratulations We have just installed and configured active directory in the cloud using Azure VMs</h2>
+
+
+
