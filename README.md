@@ -197,7 +197,7 @@ Copy the public Ip address of the Windows server
   Click on add a New Forest, put in a domain name, and click on Next. I will be using mydomain.com
 </p>
 <p>
-<img src="https://i.imgur.com/rpocKKP.png"/>
+<img src="https://i.imgur.com/QM7wIXx.png"/>
 </p>
 
 <br />
@@ -314,7 +314,7 @@ Click on Add
 <br />
 
 <p>
-on the box type " domain admins" and click on check names and then OK. This searches for an inbuild group for domain admins.
+on the box type " domain admins" and click on check names and then OK. This searches for an inbuilt group for domain admins.
 </p>
 <p>
 <img src="https://i.imgur.com/nYRckbC.png"/>
@@ -489,7 +489,7 @@ Now we have many users in our _EMPLOYEES OU and we can now use any of them to lo
 <br />
 
 <p>
-  Just as we did give permissions to the domain admins this time we want to click Add, search for the domain users group, and click OK. Now the domain users we created and RDP into the WIN 10 VM.
+  Just as we did give permissions to the domain admins this time we want to click Add, search for the domain users group, and click OK. Now the domain users we created can RDP into the WIN 10 VM.
 </p>
 <p>
 <img src="https://i.imgur.com/xNGx66C.png"/>
