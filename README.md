@@ -99,7 +99,7 @@ Click on review and create and then click on create to deploy the VM. It does ta
 <h2>RDP into the Windows server </h2>
 
 <p>
-Copy the puplic Ip address of the windows server 
+Copy the public Ip address of the Windows server 
 </p>
 <p>
 <img src="https://i.imgur.com/EH5stot.png"/>
@@ -108,12 +108,78 @@ Copy the puplic Ip address of the windows server
 <br />
 
 <p>
-  click on the search icon and search for remote desktop
+  click on the search icon and search for remote desktop and run it.
 </p>
 <p>
 <img src="https://i.imgur.com/yyko8jL.png"/>
 </p>
 
 <br />
+
+<p>
+  paste in the public IP address of the server VM and click on connect.
+</p>
+<p>
+<img src="https://i.imgur.com/LFhQZaO.png"/>
+</p>
+
+<br />
+
+<p>
+  log in with your user credentials.
+</p>
+<p>
+<img src="https://i.imgur.com/CppI0Ry.png"/>
+</p>
+
+<br />
+
+<h2> Install Active Directory Domain Services </h2>
+
+<p>
+  Once in, we see the server manager dashboard. Click on Add Roles and features to begin the active directory installation
+</p>
+<p>
+<img src="https://i.imgur.com/LQaHeir.png"/>
+</p>
+
+<br />
+
+<p>
+  Run through the installation by clicking next until the server roles section.
+</p>
+<p>
+<img src="https://i.imgur.com/uGtawAc.png"/>
+</p>
+
+<br />
+
+<p>
+  In the server roles section click on Active Directory Domain Services then click on Next.
+</p>
+<p>
+<img src="https://i.imgur.com/xUqbxUJ.png"/>
+</p>
+
+<br />
+
+<p>
+  Click on Add Features and Install.
+</p>
+<p>
+<img src="https://i.imgur.com/abkTqwD.png"/>
+</p>
+
+<br />
+
+<p>
+  Speed through to the confirmation section and make sure the box is checked and install. Give it some time to install. It is now time to propagate the server to a domain controller.
+</p>
+<p>
+<img src="https://i.imgur.com/g1Uh7Ge.png"/>
+</p>
+
+<br />
+
 
 
