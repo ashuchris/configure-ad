@@ -20,7 +20,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <h2>Operating Systems Used </h2>
 
 - Windows Server 2022
-- Windows 10 (21H2)
+- Windows 10 (22H2)
 
 <h2>Deployment and Configuration Steps</h2>
 
@@ -173,7 +173,7 @@ Copy the public Ip address of the Windows server
 <br />
 
 <p>
-  Speed through to the confirmation section and make sure the box is checked and install. Give it some time to install. It is now time to propagate the server to a domain controller.
+  Speed through to the confirmation section and make sure the box is checked and install. Give it some time to install. It is now time to promote the server to a domain controller.
 </p>
 <p>
 <img src="https://i.imgur.com/g1Uh7Ge.png"/>
@@ -181,5 +181,161 @@ Copy the public Ip address of the Windows server
 
 <br />
 
+<h2>Make the server the Domain Controler</h2>
 
+<p>
+  Click on Promote this server to a domain controller.
+</p>
+<p>
+<img src="https://i.imgur.com/rpocKKP.png"/>
+</p>
 
+<br />
+
+<p>
+  Click on add a New Forest, put in a domain name, and click on Next. I will be using mydomain.com
+</p>
+<p>
+<img src="https://i.imgur.com/rpocKKP.png"/>
+</p>
+
+<br />
+
+<p>
+  we are not going to be using this but for the purpose of completing the installation put in a password and confirm it and click next
+</p>
+<p>
+<img src="https://i.imgur.com/yIj5E8g.png"/>
+</p>
+
+<br />
+
+<p>
+  Run through the setup by clicking next until you pass the prerequisite checks and click install. The vm will restart and now it is time to create our Organisation units and users.
+</p>
+<p>
+<img src="https://i.imgur.com/C7EQg0C.png"/>
+</p>
+
+<br />
+
+<h2> Creating Organisational Units and Users </h2>
+
+<p>
+  Now we have to log in to the server using our domain credentials. RDP into the server click on more choices and click on use another account. Login using the domain and the credentials
+</p>
+<p>
+<img src="https://i.imgur.com/9HS9YUe.png"/>
+</p>
+
+<br />
+
+<p>
+  Click on tools and click on active directory users and computers
+</p>
+<p>
+<img src="https://i.imgur.com/rnLkqxe.png"/>
+</p>
+
+<br />
+
+<p>
+  right click on the domain, click on new, and click on organisational unit
+</p>
+<p>
+<img src="https://i.imgur.com/98OsZHK.png"/>
+</p>
+
+<br />
+
+<p>
+ we are going to name this OU "_EMPLOYEES". You can name yours whatever you want. OUs are like departments. We are also going to create "_ADMINS".
+</p>
+<p>
+<img src="https://i.imgur.com/dEWo24k.png"/>
+<img src="https://i.imgur.com/I2SfUGR.png"/>
+</p>
+
+<br />
+
+<p>
+ we are going to create a user in our _ADMIN OU. Right-click on the _ADMIN OU, click on new, and click on user.
+</p>
+<p>
+<img src="https://i.imgur.com/eBDBnhN.png"/>
+</p>
+
+<br />
+
+<p>
+ Fill in the user credentials and click on next.
+</p>
+<p>
+<img src="https://i.imgur.com/dDQ7sMg.png"/>
+</p>
+
+<br />
+
+<p>
+ Because this is a lab environment we can uncheck the box and fill in the password and click next. A user is created inside the _ADMIN OU.
+</p>
+<p>
+<img src="https://i.imgur.com/XBfIuNo.png"/>
+</p>
+
+<br />
+
+<p>
+ Let us actually give our new user administrative privileges by adding him to the domain administrator group. Right-click on the user and click on properties.
+</p>
+<p>
+<img src="https://i.imgur.com/gkGWHvd.png"/>
+</p>
+
+<br />
+
+<p>
+Click on the members of tab
+</p>
+<p>
+<img src="https://i.imgur.com/LCJzvgd.png"/>
+</p>
+
+<br />
+
+<p>
+Click on Add
+</p>
+<p>
+<img src="https://i.imgur.com/iUzHGeV.png"/>
+</p>
+
+<br />
+
+<p>
+on the box type " domain admins" and click on check names and then OK. This searches for an inbuild group for domain admins.
+</p>
+<p>
+<img src="https://i.imgur.com/nYRckbC.png"/>
+</p>
+
+<br />
+
+<p>
+Click on apply then OK
+</p>
+<p>
+<img src="https://i.imgur.com/MtP92iS.png"/>
+</p>
+
+<br />
+
+<h2>It is now time to install our Windows 10 client VM</h2>
+
+<p>While creating the VM we must select the same Resource group we created from the start and also the region must be the same as that of the server. We choose the WIN10 pro image.
+</p>
+<p>
+<img src="https://i.imgur.com/MtP92iS.png"/>
+</p>
+
+<br />
