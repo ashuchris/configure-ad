@@ -45,7 +45,7 @@ First We have to create a resource group, the resource group acts as a home for 
 <br />
 
 <p>
-We are going to name the resource group AzureAD. I choose Southeast Asia region, you can choose whatever region you like and click on "review and create" and "create" to create your resource group. 
+We are going to name the resource group AzureAD. I chose Southeast Asia region, you can choose whatever region you like and click on "review and create" and "create" to create your resource group. 
 </p>
 <p>
 <img src="https://i.imgur.com/oDTjU61.png"/>
