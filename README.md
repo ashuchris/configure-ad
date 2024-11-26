@@ -79,3 +79,41 @@ Choose a size with at least 2 VCPUs as this will increase the performance of the
 
 <br />
 
+<p>
+Skip the disk section and on the networking section, give your virtual network a name and leave the default value of the subnet
+<p>
+<img src="https://i.imgur.com/01r0tdE.png"/>
+</p>
+
+<br />
+
+<p>
+Click on review and create and then click on create to deploy the VM. It does take sometime to deploy. It is now time to RDP into the windows server.
+</p>
+<p>
+<img src="https://i.imgur.com/lL2HHwH.png"/>
+</p>
+
+<br />
+
+<h2>RDP into the Windows server </h2>
+
+<p>
+Copy the puplic Ip address of the windows server 
+</p>
+<p>
+<img src="https://i.imgur.com/EH5stot.png"/>
+</p>
+
+<br />
+
+<p>
+  click on the search icon and search for remote desktop
+</p>
+<p>
+<img src="https://i.imgur.com/yyko8jL.png"/>
+</p>
+
+<br />
+
+
